@@ -4,7 +4,7 @@
 Members:
 
 ##### Leonard Leong
-Creative / Organized / Dedicated 
+###Creative / Organized / Dedicated 
 I will be the team leader for this project. It's always been an interest of mine to create useful applications. With this project, I hope to be able to promote awareness for smarter personal finance, and help people make better-informed decisions towards their financial goals. As the team leader, I aim to involve myself in all aspects of the project. My primary responsibilities will be coordinating the team, creating our algorithms, and polishing the user interaction experience.
 
 ##### Riyesh Nath
