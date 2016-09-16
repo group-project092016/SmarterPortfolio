@@ -14,5 +14,5 @@ I will be managing the database for this project. I have previously worked as a 
 ##### Joseph Lopez
 With this project, I look forward to tackling new languages, and the challenges that go with it. I have some experience with designing android applications, as well as some backend programming with SQLite and C/C++. I expect to be working on some database integration, algorithm implementation, along with some web design.
     
-##### Alan Cao
+##### Alan Lau
 Our project is an investment portfolio to help people invest their money. I am knowledgable in application development and usage of API. I will help with the GUI and coding of the app.
