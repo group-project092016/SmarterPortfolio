@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Credit Card Wizard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      background-color: #7A7A7A;
+      margin-bottom: 0;
+      border-radius: 0;
+      border:0;
+    }
+    
+    /* Change font color of the left side of the nav bar to white*/
+    .navbar-default .navbar-nav > li > a {
+      color : white !important;
+    }
+
+    /* White background when mouse hovers the Menu text*/
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: black !important;
+      background-color: #fff !important;
+    }
+
+    /*Change font color of nav bar header to white*/
+    .navbar-default .navbar-brand{
+      color: white !important;
+    }
+
+     /*-- change navbar dropdown color --*/
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+      background-color:#7A7A7A; 
+      color: white;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      padding: 25px;
+    }
+
+    /*font color of page links are black even when clicked*/
+	a{
+	 color: black;
+	}
+
+	/*font color of link stays black when hovered */
+	a:link{
+		text-decoration: none;
+		color: black;
+	}
+
+	/*font color of link stays black even after it is clicked*/
+	a.visited{
+		text-decoration: none;
+		color: black;
+	}
+
+  .jumbotron{
+    background-color: white;
+  }
+
+  /*Make input form narrower*/
+  .container.custom-container {
+      padding: 0 200px;
+  }
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <!--Compress navbar links into one button when viewed on a phone-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class = "navbar-brand" href="#"><span class="glyphicon glyphicon-stats logo"></span> Smarter Portfolio</a>
+    </div>
+
+    <!--Nav bar links. Will be put in a button when viewed on a phone-->
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.htm">HOME</a></li>
+        <!--drop drop of features link-->
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FEATURES<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="PortfolioBuilder.htm">PORTFOLIO BUILDER</a></li>
+            <li><a href="#">EXPECTED GROWTH CALCULATOR</a></li>
+            <li><a href="CreditCardWizard.htm">CREDIT CARD WIZARD</a></li>
+          </ul>
+        </li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h2>Credit Card Wizard</h2>
+</div>
+
+<div class = "custom-container container">
+  <!--<h2 style = "text-align: center">Credit Card Wizard</h2>-->
+
+  <form id="rendered-form">
+
+    <div class="form-group field-number-income">
+      <label for="number-income">What is your annual income? <span class="required">*</span></label> 
+      <input type="number" required="" class="form-control" name="number-income" id="number-income" aria-required="true">
+    </div>
+
+    <div class="form-group field-number-creditscore">
+      <label for="number-creditscore">What is your Credit Score? <span class="required">*</span></label>
+      <input type="number" required="" class="form-control" name="number-creditscore" id="number-creditscore" aria-required="true">
+    </div>
+
+    <div class="form-group field-select-expenses">
+      <label for="select-expenses">What will be your primary expenses on this card? <span
+      class="required">*</span> </label>
+      <select type="select" required="" class="form-control" name="select-expenses" id="select-expenses" aria-required="true">
+        <option value="option-1" selected="true"> </option>
+        <option value="option-2">General Spending</option> 
+        <option value="option-3">Travel</option>
+        <option value="option-4">Restaurants</option>
+        <option value="option-5">Groceries/Supermarkets</option>
+      </select> 
+    </div>
+
+    <div class="form-group field-select-rotating">
+      <label for="select-rotating">Do you want a credit card with rotating higher-reward
+      categories? <span class="required">*</span> </label>
+      <select type="select" required="" class="form-control" name="select-rotating" id="select-rotating" aria-required="true">
+        <option value="option-1" selected="true"> </option>
+        <option value="option-2">Yes</option> 
+        <option value="option-3">No</option>
+      </select> 
+    </div>
+
+    <div class="form-group field-select-pointspref">
+      <label for="select-pointspref">Do you prefer cashback or travel reward points? <span
+      class="required">*</span> </label>
+      <select type="select" required="" class="form-control" name="select-pointspref"
+      id="select-pointspref" aria-required="true">
+        <option value="option-1" selected="true"> </option> 
+        <option value="option-2">Cashback</option> 
+        <option value="option-3">Travel</option>
+        <option value="option-4">I don't care</option>
+      </select>
+    </div>
+
+    <div class="form-group field-select-annualfee">
+      <label for="select-annualfee">Are you willing to pay an annual fee? <span class="required">*</span> </label>
+      <select type="select" required="" class="form-control" name="select-annualfee" id="select-annualfee" aria-required="true">
+        <option value="option-1" selected="true"> </option> 
+        <option value="option-2">Yes</option> 
+        <option value="option-3">No</option>
+    </select>
+    </div>
+
+    <div class="form-group field-select-waive">
+      <label for="select-waive">Will you try a Credit Card that waives the first annual fee?</label>
+      <select type="select" class="form-control" name="select-waive" id="select-waive">
+      <option value="option-1" selected="true"> </option>
+      <option value="option-2">Yes</option>
+      <option value="option-3">No</option> 
+    </select>
+    </div>
+
+    <div class="form-group field-checkbox-group-veto">
+    <label for="checkbox-group-veto">Do you want to veto any payment networks? </label>
+      <div class="checkbox-group">
+      <input type="checkbox" class="checkbox-group" name="checkbox-group-veto[]" id="checkbox-group-veto-0" value="option-1" selected=""> <label for="checkbox-group-veto-0">Visa</label>
+              
+      <input type="checkbox" class="checkbox-group" name="checkbox-group-veto[]" id="checkbox-group-veto-1" value="option-2" selected=""> <label for="checkbox-group-veto-1">MasterCard</label>
+
+      <input type="checkbox" class="checkbox-group" name="checkbox-group-veto[]" id="checkbox-group-veto-2" value="option-3" selected=""> <label for="checkbox-group-veto-2">Discover</label>
+      
+      <input type="checkbox" class="checkbox-group" name="checkbox-group-veto[]" id="checkbox-group-veto-3" value="option-4" selected=""> <label for="checkbox-group-veto-3">American Express</label>
+     </div>
+    </div>
+
+    <div class="form-group field-button-submit"><button type="button" class="button-input btn btn-success" name="button-submit" style="success" id="button-submit">Submit</button></div> 
+  </form>
+</div>
+
+<footer class="container-fluid text-center">
+  <a href="#"><p style="display: inline-block">Support</p></a>
+  <a href="#"><p style="display: inline-block">Language</p></a>
+  <a href="#"><p style="display: inline-block">Privacy</p></a>
+</footer>
+
+</body>
+</html>
+

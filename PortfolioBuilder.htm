@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Portfolio Builder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      background-color: #7A7A7A;
+      margin-bottom: 0;
+      border-radius: 0;
+      border:0;
+    }
+    
+    /* Change font color of the left side of the nav bar to white*/
+    .navbar-default .navbar-nav > li > a {
+      color : white !important;
+    }
+
+    /* White background when mouse hovers the Menu text*/
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: black !important;
+      background-color: #fff !important;
+    }
+
+    /*Change font color of nav bar header to white*/
+    .navbar-default .navbar-brand{
+      color: white !important;
+    }
+
+     /*-- change navbar dropdown color --*/
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+      background-color:#7A7A7A; 
+      color: white;
+    }
+    
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      padding: 25px;
+    }
+
+    /*font color of page links are black even when clicked*/
+	a{
+	 color: black;
+	}
+
+	/*font color of link stays black when hovered */
+	a:link{
+		text-decoration: none;
+		color: black;
+	}
+
+	/*font color of link stays black even after it is clicked*/
+	a.visited{
+		text-decoration: none;
+		color: black;
+	}
+
+  .jumbotron{
+    background-color: white;
+  }
+
+  /*Make input form narrower*/
+  .container.custom-container {
+      padding: 0 200px;
+  }
+
+</style>
+
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    <!--Compress navbar links into one button when viewed on a phone-->
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class = "navbar-brand" href="#"><span class="glyphicon glyphicon-stats logo"></span> Smarter Portfolio</a>
+    </div>
+
+    <!--Nav bar links. Will be put in a button when viewed on a phone-->
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="Home.htm">HOME</a></li>
+        <!--drop drop of features link-->
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FEATURES<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="PortfolioBuilder.htm">PORTFOLIO BUILDER</a></li>
+            <li><a href="#">EXPECTED GROWTH CALCULATOR</a></li>
+            <li><a href="CreditCardWizard.htm">CREDIT CARD WIZARD</a></li>
+          </ul>
+        </li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron text-center">
+  <h2>Portfolio Builder</h2>
+</div>
+
+<div class = "custom-container container">
+  <form id="rendered-form"> 
+ 
+<div class="form-group field-number-age">
+  <label for="number-age">What is your age? <span class="required">*</span> </label> 
+  <input type="number" required="" min="0" max="150" step="0" class="form-control" name="number-age" id="number-age" aria-required="true">
+</div>
+
+<div class="form-group field-number-capital">
+  <label for="number-capital">How much money are you looking to invest? <span class="required">*</span> </label> 
+  <input type="number" required="" min="1" class="form-control" name="number-capital" id="number-capital" aria-required="true">
+</div>
+
+<div class="form-group field-select-goal">
+  <label for="select-goal">What is the investment goal? <span class="required">*</span>
+  </label>
+  <select type="select" required="" class="form-control" name="select-goal" id="select-goal"
+  aria-required="true">
+    <option value="option-1" selected = "true"> </option>
+    <option value="option-2">Retirement Planning</option> 
+    <option value="option-3">Wealth Accumulation</option> 
+    <option value="option-4">Safety Net</option></select> 
+</div>
+
+<div class="form-group field-checkbox">
+    <label for="checkbox-group-veto">Diversify with international stocks?</label>
+
+      <div class="checkbox-group">
+      <input type="checkbox" class="checkbox-group" name="checkbox-1474621289446" id="checkbox-1474621289446" value="option-1" selected=""> <label for="checkbox-1474621289446">Yes</label>
+              
+      <input type="checkbox" class="checkbox-group" name="checkbox-1474621289447" id="checkbox-1474621289447" value="option-2" selected=""> <label for="checkbox-1474621289447">No</label>
+</div>
+
+<div class="form-group field-select-1474621416872">
+  <label for="select-1474621416872">What is your risk preference? </label> 
+  <select type="select" class="form-control" name="select-1474621416872" id="select-1474621416872">
+    <option value="option-1" selected="true"> </option> 
+    <option value="option-2">Conservative</option> 
+    <option value="option-3">Moderate</option>
+    <option value="option-4">Aggressive</option>
+  </select> 
+</div>
+
+<div class="form-group field-button-build"><button type="submit" class="button-input btn btn-success" name="button-build" style="success" id="button-build">Build</button></div> </form>
+</div>
+
+<footer class="container-fluid text-center">
+  <a href="#"><p style="display: inline-block">Support</p></a>
+  <a href="#"><p style="display: inline-block">Language</p></a>
+  <a href="#"><p style="display: inline-block">Privacy</p></a>
+</footer>
+
+</body>
+</html>
+
