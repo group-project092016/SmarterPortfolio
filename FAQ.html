@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>FAQ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      background-color: transparent;
+      margin-bottom: 0;
+      border-radius: 0;
+      border:0;
+    }
+    
+    /*Underline right side text within navbar*/
+    .navbar .navbar-nav {
+      float: none;
+      border-bottom: solid black;
+    }
+
+    /*Underline left side text within navbar*/
+    .navbar .navbar-brand{
+      border-bottom: solid black;
+    }
+
+    /* Change font color of the left side of the nav bar to black*/
+    .navbar-default .navbar-nav > li > a {
+      color : black !important;
+    }
+
+    /* Gray background when mouse hovers over the text. Text color is set to white when hovered*/
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: white !important;
+      background-color: #7A7A7A !important;
+    }
+
+    /*Change font color of nav bar header to black*/
+    .navbar-default .navbar-brand{
+      color: black !important;
+    }
+
+     /*-- change navbar dropdown color --*/
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+      background-color:transparent; 
+      color: black;
+    }
+
+    /*change the color of the drop down icon when being viewed on smaller screens.*/
+    .navbar .navbar-toggle .icon-bar{
+      background-color: black;
+    }
+
+    /*font color of page links are black even when clicked*/
+  	a{
+  	 color: black;
+  	}
+
+  	/*font color of link stays black when hovered */
+  	a:link{
+  		text-decoration: none;
+  		color: black;
+  	}
+
+  	/*font color of link stays black even after it is clicked*/
+  	a.visited{
+  		text-decoration: none;
+  		color: black;
+  	}
+
+    .headerJumbotron{
+      background-color: transparent;
+      color: black;
+      border-bottom: solid 1px;
+    }
+
+    .algorithmJumbotron{
+      background-color: transparent;
+    }
+
+    .algo-content{
+
+      padding: 0 200px;
+    }
+
+    /*Make dropdown narrower*/
+    .container.custom-container {
+      color: black;
+      padding: 0 280px;
+    }
+
+    /*set spacing in the "panel", "flip" dropdown*/
+    .panel, .flip {
+    	padding: 5px;
+  	}
+
+  	/*hide "flip" dropdown initially*/
+  	.panel {
+  	   padding: 20px;
+  	   display: none;
+  	}
+
+    html, body{
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+
+
+    /* Resize dropdown when viewed on a mobile */
+    @media (max-width: 978px) {
+    	.container.custom-container{
+        padding: 25px;
+      }
+
+      .algo-content{
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      /*remove bottom border on right side text within navbar*/
+      .navbar .navbar-nav {
+        border-bottom: none;
+      }
+
+      /*remove bottom border left side text within navbar*/
+      .navbar .navbar-brand{
+        border-bottom: none;
+      }
+
+      /*put bottom border on the entire navbar*/
+      .navbar{
+        border-bottom: solid black;
+      }
+    }
+
+  </style>
+
+  <script>
+
+  $(document).ready(function(){
+    /*prevent page from scrolling up automatically when links(questions) are clicked*/
+    $(".questions").click(function(e){
+      e.preventDefault();           
+    });
+
+    $(".flip").click(function(){
+        $(this).next(".panel").slideToggle("fast"); //slide next "panel" below "flip"
+    });
+  });
+
+ 
+</script>
+
+</head>
+<body>
+
+<div class="container-fluid">
+  
+  <!--navbar-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <!--Compress navbar links into one button when viewed on a phone-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class = "navbar-brand" href="index.html"><span class="glyphicon glyphicon-stats logo"></span> Smarter Portfolio</a>
+      </div>
+
+      <!--Nav bar links. Will be put in a button when viewed on a phone-->
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">HOME</a></li>
+          <!--drop drop of features link-->
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FEATURES<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="PortfolioBuilder.html">PORTFOLIO BUILDER</a></li>
+              <li><a href="ExpectedGrowthCalculator.html">EXPECTED GROWTH CALCULATOR</a></li>
+              <li><a href="CreditCardWizard.html">CREDIT CARD WIZARD</a></li>
+            </ul>
+          </li>
+          <li><a href="AboutUs.html">ABOUT US</a></li>
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--title-->  
+  <div class="container">
+    <div class="page-header headerJumbotron">
+      <h1>FAQ</h1>
+    </div>
+  </div>
+
+</div>
+
+<div class = "custom-container container">
+	<div class="flip">
+		<a href="#" class="questions"><h5>Will this make me rich?</h5></a>
+		
+	</div>
+	<div class="panel">
+		<p>The strategy should work as it is advertised to. So you should expect to double your principal investment multiple times, given enough time. It is up to you, whether or not that amount is enough to satisfy your needs. The more money you prepare at an earlier time, the more it will accumulate to.</p>
+	</div>
+
+	<div class="flip">
+		<a href="#" class="questions"><h5>I don’t have any savings at all. Is this still something that I should be looking into?</h5></a>
+	</div>
+	<div class="panel">
+		<p>It depends on your opportunity costs. Before investing in the market, where the returns are gradual, see if there are rewarding ways to invest in yourself. This may be in the form of an education, training, etc. Especially for low sums of money, these choices offer more potential ROI.
+		</p>
+	</div>
+
+	<div class="flip">
+		<a href="#" class="questions"><h5>I’m being told to invest in a certain amount of stocks and bonds. How do I buy them?</h5></a>
+	</div>
+	<div class="panel">
+		<p>We recommend investing in these assets through low cost index funds. There are many to choose from. If you are at a loss, we recommend the following:<br> 
+		 -Vanguard Total Stock Market Index Fund (VTI) <br>
+		-Vanguard Total Bond Market Index Fund (BND)<br>
+		-Vanguard Total International Stock Index Fund (VXUS)<br></p>
+	</div>
+
+	<div class="flip">
+		<a href="#"><h5 class="questions">This strategy seems boring. Won’t I make more money day-trading?</h5></a>
+	</div>
+	<div class="panel">
+		<p>If you are so talented and gifted, perhaps. But for the overwhelming majority of people, they’d see better results just investing and holding onto index funds. This saves you time and hassle, especially when it comes to taxes.</p>
+	</div>
+
+	<div class="flip">
+		<a href="#" class="questions"><h5>Aren’t credit cards bad? Why are you recommending one for me?</h5></a>
+	</div>
+	<div class="panel">
+		<p>If you are a follower of Dave Ramsey’s advice, then you might think so. But no, they are not inherently ‘bad’. They are only bad if misused, and the same logic would apply to any other line of credit.<br><br>A credit card is a revolving line of credit, and a very useful tool. If anything, to help you build up your credit score, which is an important assessment of your reliability and trustworthiness towards financial contracts. And if you use them correctly, credit cards offer reward points, that while miniscule, can add up over time to help you claim meaningful prizes.</p>
+	</div>
+
+	<div class="flip">
+		<a href="#" class="questions"><h5>How accurate is the expected growth calculator?</h5></a>
+	</div>
+	<div class="panel">
+		<p>The expected growth calculator uses the long-term historic performance of given asset types, and assumes that they will continue on this trend. It should be accurate given a long enough period of time, but is guessing at best for shorter periods.</p>
+	</div>
+
+  <div class="flip">
+    <a href="#" class="questions"><h5>How does the Portfolio Builder work?</h5></a>
+  </div>
+  <div class="panel">
+    <p>Our Portfolio Builder algorithms are based on effective passive investing strategies. They determine an efficient asset allocation based on your investment goals and risk preferences.</p>
+  </div>
+
+  <div class="flip">
+    <a href="#" class="questions"><h5>How do I get started on investing?</h5></a>
+  </div>
+  <div class="panel">
+    <p>You first need to create a brokerage account. That will allow you to transfer in funds and make the investments you want. For beginners, we recommend Vanguard, which offers no fees when you trade the funds they manage.</p>
+  </div>
+
+</div>
+
+ 
+
+<!--
+<div class="container">
+  <div class="page-header text-center algorithmJumbotron">
+    <h2>Algorithms</h2>
+  </div>
+
+  <div class="container algo-content text-center">
+    <div class="col-sm-12">
+      <p>The expected growth calculator uses the long-term historic performance of given asset types, and assumes that they will continue on this trend. It should be accurate given a long enough period of time, but is guessing at best for shorter periods.</p>
+    </div>
+  </div>
+</div>
+-->
+
+</body>
+</html>
+
