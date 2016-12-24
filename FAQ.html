@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="FAQ.js"></script>
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
     .navbar {
@@ -141,23 +142,7 @@
     }
 
   </style>
-
-  <script>
-
-  $(document).ready(function(){
-    /*prevent page from scrolling up automatically when links(questions) are clicked*/
-    $(".questions").click(function(e){
-      e.preventDefault();           
-    });
-
-    $(".flip").click(function(){
-        $(this).next(".panel").slideToggle("fast"); //slide next "panel" below "flip"
-    });
-  });
-
- 
-</script>
-
+  
 </head>
 <body>
 

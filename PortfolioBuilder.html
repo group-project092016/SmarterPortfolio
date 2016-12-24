@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Portfolio Builder</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src= 'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js'></script>
+  <script type="text/javascript" src="javascript/jav.js"></script>
+  <script type="text/php" src="javascript/test.php"></script>
+  <script src="builder.js"></script>
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      background-color: transparent;
+      margin-bottom: 0;
+      border-radius: 0;
+      border: 0;
+      /*border-bottom: solid white;*/
+    }
+    
+    /* Change font color of the left side of the nav bar to white*/
+    .navbar-default .navbar-nav > li > a {
+      color : white !important;
+    }
+
+    /* White background when mouse hovers the Menu text*/
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: black !important;
+      background-color: #fff !important;
+    }
+
+    /*Underline left side of the navbar*/
+    .navbar-default .navbar-brand{
+      color: white !important;
+      border-bottom: solid white;
+    }
+
+    /* Underline right side of the navbar*/
+    .navbar .navbar-nav {
+      float: none;
+      border-bottom: solid white;
+    }
+
+     /*-- change navbar dropdown color --*/
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+      background-color:transparent; 
+      color: white;
+    }
+
+    /*change the color of the drop down icon when being viewed on smaller screens.*/
+    .navbar .navbar-toggle .icon-bar{
+      background-color: white;
+    }
+
+  	/*font color of link stays black when hovered */
+  	a:link{
+  		text-decoration: none;
+  	}
+
+    .jumbotron{
+      background-color: transparent;
+      color: white;
+    }
+
+    /*Make input form narrower*/
+    .container.custom-container {
+      margin-top: 30px;
+      padding: 0 280px;
+      padding-bottom: 30px;
+    }
+
+    #header{
+      /*background-color: #20B2AA;*/
+      background-image: url('coins.jpg');
+      background-size: cover;
+      background-position: bottom center;
+      /*min-height: 500px;*/
+    }
+    
+    /*set spacing in the "panel", "flip" dropdown*/
+    .panel, .flip {
+      padding: 5px;
+     }
+
+     .flip .a{
+      color: white !important;
+     }
+
+     /*hide "flip" dropdown initially*/
+     .panel {
+       padding: 20px;
+       /*display: none;*/
+       background-color: transparent;
+     }
+
+     html, body{
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    /* Resize input forms when viewed on a mobile */
+    @media (max-width: 978px) {
+      .container.custom-container{
+        padding: 25px;
+      }
+      
+      #header{
+        /*height: auto;*/
+        background-position: bottom center;
+      }
+      .info{
+        padding: 25px;
+      }
+      /*set opacity when on smaller view*/
+      .panel{
+        display: none;
+        background: black;
+        opacity: 0.8;
+      }
+      /*investment goal tab*/
+      .nav-tabs{
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 768px) {
+        /*Remove bottom border on the left side of the navbar*/
+      .navbar-default .navbar-brand{
+        border-bottom: 0px;
+      }
+      /*set navbar opacity on smaller screens*/
+      .navbar{
+        background: black;
+        opacity: 0.8;
+      }
+      .jumbotron p{
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+</style>
+  
+</head>
+<body>
+
+<div class="clearfix container-fluid" id="header">
+
+  <!-- navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <!--Compress navbar links into one button when viewed on a phone-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class = "navbar-brand" href="index.html"><span class="glyphicon glyphicon-stats logo"></span> Smarter Portfolio</a>
+      </div>
+
+      <!--Nav bar links. Will be put in a button when viewed on a phone-->
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">HOME</a></li>
+          <!--drop drop of features link-->
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FEATURES<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="PortfolioBuilder.html">PORTFOLIO BUILDER</a></li>
+              <li><a href="ExpectedGrowthCalculator.html">EXPECTED GROWTH CALCULATOR</a></li>
+              <li><a href="CreditCardWizard.html">CREDIT CARD WIZARD</a></li>
+            </ul>
+          </li>
+          <li><a href="AboutUs.html">ABOUT US</a></li>
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- title -->
+  <div class="jumbotron text-center">
+    
+    <div class="container-fluid title">
+      <h1>Portfolio Builder</h1>
+    </div>  
+    
+    <div class="container info">
+      <div class="flip">
+        <a href="#"><h5 style="color:white; font-weight:bold;">About this Tool</h5></a>
+      </div>
+      <div class="panel">
+        <p>This Portfolio Builder tool is here to help you properly determine the asset allocation for your investments, to optimize your returns whilst maintaining safety against negative market swings. We recommend investing your money in index funds of the appropriate asset types.</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<!--input form-->
+<div class = "custom-container container">
+
+  <div style="border-bottom: solid 1px #D3D3D3"><h3>The Builder</h3></div><br><br>
+
+  <form id="rendered-form"> 
+ 
+    <div class="form-group field-number-age">
+      <label for="number-age">What is your age? <span class="required">*</span> </label> 
+      <input type="number" required="" min="0" max="150" step="0" class="form-control" name="number-age" id="number-age" aria-required="true">
+    </div>
+
+    <div class="form-group field-number-capital">
+      <label for="number-capital">How much money are you looking to invest? <span class="required">*</span> </label> 
+      <input type="number" required="" min="1" class="form-control" name="number-capital" id="number-capital" aria-required="true">
+    </div>
+
+    <div class="form-group field-select-1474621416872">
+      <label for="select-1474621416872">What is your risk preference? </label> 
+      <select type="select" class="form-control" name="select-1474621416872" id="select-1474621416872" onchange="getPreference(this);">
+        <option value="option-1" selected="true"> </option> 
+        <option value="option-2">Conservative</option> 
+        <option value="option-3">Moderate</option>
+        <option value="option-4">Aggressive</option>
+      </select> 
+    </div>
+
+    <div class="form-group field-checkbox">
+      <label for="checkbox-group-veto">Diversify with international stocks?</label>
+      <div class="checkbox-group">
+        <input type="checkbox" class="checkbox-group" name="checkbox-1474621289446" id="checkbox-1474621289446" value="option-1" selected=""> <label for="checkbox-1474621289446">Yes</label>
+                  
+        <input type="checkbox" class="checkbox-group" name="checkbox-1474621289447" id="checkbox-1474621289447" value="option-2" selected=""> <label for="checkbox-1474621289447">No</label>
+      </div>
+    </div><br>
+
+    <!--call retrieval functions, initiate modal to print results. 
+    changed button type from "submit" to "button"-->
+    <div class="form-group field-button-build">
+      <button class="button-input btn btn-success" id="submitit" type="submit" onclick = "getInternational(); getidea(internationalText, preferenceText);" formaction="showchart.html" >Submit</button>
+    </div> 
+
+  </form>
+</div>
+
+</body>
+</html>
+

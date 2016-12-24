@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      background-color: transparent;
+      border-radius: 0;
+      border: 0;
+    }
+
+    /* Place navbar nav to the center of the heading, underline text within navbar*/
+    .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+      border-bottom: solid white;
+    }
+
+    /* Place navbar features dropdown in the center of the heading*/
+    .navbar .navbar-collapse {
+      text-align: center;
+    }
+
+    /* Change font color of the nav bar to white*/
+    .navbar-default .navbar-nav > li > a {
+      color : white !important;
+    }
+
+    /*White background when mouse hovers the Menu text*/
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: black !important;
+      background-color: #fff !important;
+    }
+
+    /*Change font color of nav bar header to white*/
+    .navbar-default .navbar-brand{
+      color: white !important;
+    }
+
+     /* change navbar dropdown font color, background to white*/
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+      background-color:transparent; 
+      color: white;
+    }
+
+    /*change the color of the drop down icon when being viewed on smaller screens.*/
+    .navbar .navbar-toggle .icon-bar{
+      background-color: white;
+    }
+
+    /*font color of page links are black even when clicked*/
+    a{
+     color: black;
+    }
+
+    /*font color of link stays black when hovered */
+    a:link{
+      text-decoration: none;
+      color: black;
+    }
+
+    /*font color of link stays black even after it is clicked*/
+    a.visited{
+      text-decoration: none;
+      color: black;
+    }
+
+    /*Icons for our tools*/
+    .logo-small {
+      font-size: 110px;
+    }
+
+    /*Icon for the about us section*/
+    .logo{
+      font-size: 150px;
+    }
+
+    /*container for background layer and texts. Height is same as body.*/
+    #box{
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    /*layer above the background image*/
+    /*set it behind the texts*/
+    /*set it to the dimensions of the box and body container.*/
+    #box .bg{
+      background: black;
+      opacity: 0.2;
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      /*border-radius: 25px;
+      box-shadow: 0 0 5px;*/
+    }
+
+    /*set jumbotron transparent, contents white, and add bottom border*/
+    .jumbotron{
+      background: transparent;
+      color: white;
+      border-bottom: solid;
+      text-shadow: 0 1px black;
+    }
+
+    .jumbotron p{
+      font-weight: bold;
+    }
+
+    /*set contents of tools to white*/
+    .tools{
+      color: white;
+      text-shadow: 0 1px black;
+      margin-bottom: 12px;
+    }
+
+    /*set link colors to white in tools section*/
+    .tools a{
+      color: white;
+    }
+
+    /*add top padding so there's enough space in the box when hovered*/
+    .col-sm-4{
+      padding-top: 20px;
+    }
+
+    .tools .col-sm-4:hover{
+      box-shadow: 0 0 5px;
+    }
+
+    /*set background image, set it to fit the window*/
+    body{
+      background-image: url('ny.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      /*overflow: hidden;*/
+    }
+
+    html, body{
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+  
+    /* Put space between feature columns when viewed from a mobile device */
+    /* add bottom padding so there's enough space within each box when hovered*/
+    @media (max-width: 768px) {
+      .col-sm-4{
+        padding-bottom: 10px;
+        margin-bottom: 50px; 
+      }
+
+      /* Remove the navbar's default margin-bottom and rounded borders */
+      .navbar {
+        border: 0;
+        border-bottom: solid white;
+      }      
+
+      /* Remove bottom border navbar text*/
+      .navbar .navbar-nav {
+        border-bottom: 0;
+      }
+
+      /*extend container height to body*/
+      #box{
+        height: auto;
+        width: auto;
+      }
+
+      body{
+        overflow: visible;
+        background-position: bottom center;
+      }
+       /*navbar dropdown- text is aligned to center*/
+      .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu
+      {
+        text-align: center;
+      }
+    }
+  </style>
+
+  <script>
+    //hide elements
+    /*$(document).ready(function(){
+        $(".fade-jumbotron").hide();
+        $(".fade-element").hide();
+    });
+
+    //show elements
+    $(document).ready(function(){
+        $(".fade-jumbotron").fadeIn(1500);
+        $(".fade-element").fadeIn(1500);
+    });*/
+
+    /*$(document).ready(function(){    
+      $('.dropdown-toggle').click(function() {
+        $(this).next('.dropdown-menu').slideToggle("fast");
+      });
+    });*/
+
+    /*$(document).ready(function(){    
+     // Add slideDown animation to dropdown
+      $('.dropdown').on('show.bs.dropdown', function(e){
+        $(this).find('.dropdown-menu').first().stop(true, true).slideDown("fast");
+      });
+
+      // Add slideUp animation to dropdown
+      $('.dropdown').on('hide.bs.dropdown', function(e){
+        $(this).find('.dropdown-menu').first().stop(true, true).slideUp("fast");
+      });
+    });*/
+  </script>
+
+</head>
+<body>
+
+
+<div class="clearfix container-fluid" id="box">
+
+  <div class="bg container-fluid"></div>
+
+  <!--navbar-->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+      <!--Compress navbar links into one button when viewed on a phone-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        </div>
+
+      <!--Nav bar links. Will be put in a button when viewed on a phone-->
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">HOME</a></li>
+          <!--drop drop of features link-->
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FEATURES<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="PortfolioBuilder.html">PORTFOLIO BUILDER</a></li>
+              <li><a href="ExpectedGrowthCalculator.html">EXPECTED GROWTH CALCULATOR</a></li>
+              <li><a href="CreditCardWizard.html">CREDIT CARD WIZARD</a></li>
+            </ul>
+          </li>
+          <li><a href="AboutUs.html">ABOUT US</a></li>
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- title -->
+  <div class="container">
+    <div class="jumbotron fade-jumbotron text-center">
+      <div class="col-sm-12 fade-jumbotron">
+          <span class="glyphicon glyphicon-stats logo"></span>
+        </div>
+      <h1>Smarter Portfolio</h1>
+      <p>We get everything right something something</p>
+    </div>
+  </div>
+
+  <!--Feature Container-->
+  <div class="tools container text-center">
+    <div class="row features">
+    <h3>Our Tools</h3><br><br><br>
+      <div class="col-sm-4 fade-element">
+        <a href= "PortfolioBuilder.html"><span class="glyphicon glyphicon-list-alt logo-small"></span>
+        <h4>PORTFOLIO BUILDER</h4></a>
+      </div>
+      
+      <div class="col-sm-4 fade-element">
+        <a href= "ExpectedGrowthCalculator.html"><span class="glyphicon glyphicon-signal logo-small"></span>
+        <h4>EXPECTED GROWTH CALCULATOR</h4></a>
+      </div>
+
+      <div class="col-sm-4 fade-element">
+        <a href = "CreditCardWizard.html"><span class = "glyphicon glyphicon-credit-card logo-small"></span>
+        <h4>CREDIT CARD WIZARD</h4></a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
+

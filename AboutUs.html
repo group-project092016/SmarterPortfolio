@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>About Us</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      background-color: transparent;
+      margin-bottom: 0;
+      border-radius: 0;
+      border:0;
+    }
+    
+    /* Change font color of the left side of the nav bar to white*/
+    .navbar-default .navbar-nav > li > a {
+      color : white !important;
+    }
+
+    /* White background when mouse hovers the Menu text*/
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: black !important;
+      background-color: #fff !important;
+    }
+
+    /*Underline left side of the navbar.*/
+    .navbar-default .navbar-brand{
+      color: white !important;
+      border-bottom: solid white;
+    }
+
+    /* Underline right side of the navbar*/
+    .navbar .navbar-nav {
+      float: none;
+      border-bottom: solid white;
+    }
+
+     /*-- change navbar dropdown color --*/
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+      background-color:transparent; 
+      color: white;
+    }
+
+    /*change the color of the drop down icon when being viewed on smaller screens.*/
+    .navbar .navbar-toggle .icon-bar{
+      background-color: white;
+    }
+
+  	/*font color of link stays black when hovered */
+  	a:link{
+  		text-decoration: none;
+  		color: black;
+  	}
+
+    p{
+      word-wrap: break-word;
+    }
+
+    /*center image in left container in the about smart porf section*/
+    .left-image{
+      /*padding-top: 10px;*/
+      text-align: right;
+    }
+
+    /*set size of image in the left container in the about smart porf section*/
+    .small-logo {
+      font-size: 350px;
+    }
+
+    .mission{
+      /*font-size: 17px;*/
+      margin-top: 100px;
+    }
+
+    .headerJumbotron{
+      background-color: transparent;
+      color: white;
+    }
+
+    .developersJumbotron{
+      background-color: transparent;
+    }
+
+    .thumbnails{
+      margin-top: 100px;
+      background-color: #f6f6f6;
+      padding-bottom: 50px;
+    }
+
+    .thumbnail{
+      background-color: transparent;
+      box-shadow: 0 0 2px;
+    }
+
+    #header{
+      background-image: url('wallstreet_mag.jpg');
+      background-size: cover;
+      background-position: center center;
+      height: 400px; 
+    }
+
+    /*resize, and align left image on smaller screens*/
+    @media screen and (max-width: 1200px) {
+      .left-image{
+        padding-top: 50px;
+        font-size: 300px;
+      }
+    }
+
+    /*resize, and align left image on smaller screens*/
+    @media screen and (max-width: 978px) {
+      .left-image{
+        padding-top: 70px;
+        font-size: 300px;
+      }
+      .thumbnails{
+        margin-top: 50px;
+      }
+    }
+
+    /*resize and recenter image when on mobile view. Also resize thumbnails*/
+    @media screen and (max-width: 768px) {
+     .left-image {
+        text-align: center;
+        margin: 25px 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+      }
+      .small-logo {
+        font-size: 300px;
+      }
+      .thumbnail{
+        border: 0;
+      }
+      .mission{
+        padding: 35px;
+        margin-top: 0px;
+      }
+      .col-sm-3{
+        padding-bottom: 50px;
+      }
+      .thumbnails{
+        padding: 40px;
+      }
+      #header{
+        height: auto;
+      }
+       /*Remove bottom border on the left side of the navbar*/
+      .navbar-default .navbar-brand{
+        border-bottom: 0px;
+      }
+      /*set navbar opacity on smaller screens*/
+      .navbar{
+        background: black;
+        opacity: 0.8;
+      }
+    }
+
+  </style>
+  
+  <script>
+    //hide elements
+    /*$(document).ready(function(){
+        $(".fade-left").hide();
+        $(".fade-right").hide();
+        $(".fade-thumbnail").hide();
+    });
+
+    $(document).ready(function(){
+        //show icon and mission column
+        $(".fade-left").fadeIn(1500);
+        $(".fade-right").fadeIn(1500);
+        $(".fade-thumbnail").fadeIn(1500);
+
+        $(document).scroll(function() {
+          //if user scrolls down, show thumbnails
+          if($(document).scrollTop() > 0){
+            $(".fade-thumbnail").fadeIn("slow");
+          }
+          //if the user scrolls up, hide the thumbnails
+          else{
+            $(".fade-thumbnail").hide("fast");
+          }
+        });
+    });*/
+  </script>
+
+</head>
+<body>
+
+<div class="clearfix container-fluid" id="header">
+
+  <!--navbar-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <!--Compress navbar links into one button when viewed on a phone-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class = "navbar-brand" href="index.html"><span class="glyphicon glyphicon-stats logo"></span> Smarter Portfolio</a>
+      </div>
+
+      <!--Nav bar links. Will be put in a button when viewed on a phone-->
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">HOME</a></li>
+          <!--drop drop of features link-->
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FEATURES<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="PortfolioBuilder.html">PORTFOLIO BUILDER</a></li>
+              <li><a href="ExpectedGrowthCalculator.html">EXPECTED GROWTH CALCULATOR</a></li>
+              <li><a href="CreditCardWizard.html">CREDIT CARD WIZARD</a></li>
+            </ul>
+          </li>
+          <li><a href="AboutUs.html">ABOUT US</a></li>
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="jumbotron container headerJumbotron text-center">
+    <h1>About Smarter Portfolio</h1>
+  </div>
+
+</div>
+
+
+
+<!-- Container (About Section) -->
+<!--
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-2 left-image">
+      <span class="glyphicon glyphicon-globe small-logo"></span>
+    </div>
+    <div class="col-sm-4">
+      <h3>Our Mission</h2>
+      <p><strong>Fight Financial Literacy:</strong> A major motivation is being able use technology to help solve a problem. We aspire to make a difference against the financial illiteracy that is so prevalent.</p>
+      <h3>Goals for the User-Experience</h3>
+      <p><strong>Simplicity:</strong> Do not overwhelm the user with excess information. Keep it simple and easily understandable.</p>
+      <p><strong>Efficiency:</strong> Simple is meaningless if it does not work. The strategies we recommend will be smart and effective.</p>
+      <p><strong>Transparency:</strong> We are transparent about our advice and process. We do not shill for our own interests.</p>
+    </div>
+  </div>
+</div>
+//-->
+
+<!-- Container (About Section) -->
+<div class="container mission">
+  <div class="row">
+    <div class="col-sm-6 fade-left left-image">
+      <span class="glyphicon glyphicon-globe small-logo"></span>
+    </div>
+    <div class="col-sm-4 fade-right">
+      <h3>Our Mission</h3>
+      <p><strong>Fight Financial Illiteracy:</strong> A major motivation is being able use technology to help solve a problem. We aspire to make a difference against the financial illiteracy that is so prevalent.</p>
+      <h3>Goals for the User-Experience</h3>
+      <p><strong>Simplicity:</strong> Do not overwhelm the user with excess information. Keep it simple and easily understandable.</p>
+      <p><strong>Efficiency:</strong> Simple is meaningless if it does not work. The strategies we recommend will be smart and effective.</p>
+      <p><strong>Transparency:</strong> We are transparent about our advice and process. We do not shill for our own interests.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Portfolio Section) -->
+<div class="container-fluid thumbnails text-center">
+
+  <div class="container">
+    
+    <div class="jumbotron developersJumbotron text-center">
+      <h2>The Developers</h2>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-sm-3 fade-thumbnail">
+        <div class="thumbnail">
+          <img src="leon.jpg" alt="Leon" width="400" height="300">
+          <p><strong>Leonard Leong</strong><br>Project Manager</p>
+        </div>
+      </div>
+
+      <div class="col-sm-3 fade-thumbnail">
+        <div class="thumbnail">
+          <img src="riyesh.jpg" alt="Riyesh" width="400" height="300">
+          <p><strong>Riyesh Nath</strong><br>Database Engineer</p> 
+        </div>
+      </div>
+
+      <div class="col-sm-3 fade-thumbnail">
+        <div class="thumbnail">
+          <img src="joseph.jpg" alt="Joseph" width="400" height="300">
+          <p><strong>Joseph Lopez</strong><br>Front-End Developer</p>   
+        </div>
+      </div>
+
+      <div class="col-sm-3 fade-thumbnail">
+        <div class="thumbnail">
+          <img src="alan.jpg" alt="Alan" width="400" height="300">
+          <p><strong>Alan Lau</strong><br>Core-system Analyst</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
+

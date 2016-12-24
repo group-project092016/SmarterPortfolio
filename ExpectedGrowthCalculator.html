@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Expected Growth Calculator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="http://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script src="Calculator.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      background-color: transparent;
+      margin-bottom: 0;
+      border-radius: 0;
+      border:0;
+      /*border-bottom: solid white;*/
+    }
+    
+    /* Change font color of the left side of the nav bar to white*/
+    .navbar-default .navbar-nav > li > a {
+      color : white !important;
+    }
+
+    /* White background when mouse hovers the Menu text*/
+    .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: black !important;
+      background-color: #fff !important;
+    }
+
+    /*Underline left side of the navbar*/
+    .navbar-default .navbar-brand{
+      color: white !important;
+      border-bottom: solid white;
+    }
+
+    /* Underline right side of the navbar*/
+    .navbar .navbar-nav {
+      float: none;
+      border-bottom: solid white;
+    }
+
+     /*-- change navbar dropdown color --*/
+    .navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu {
+      background-color:transparent;
+      /*background-color: black;
+      opacity: 0.8;*/
+      color: white;
+    }
+
+    /*change the color of the drop down icon when being viewed on smaller screens.*/
+    .navbar .navbar-toggle .icon-bar{
+      background-color: white;
+    }
+
+    /*font color of page links are black even when clicked*/
+  	a{
+  	 color: black;
+  	}
+
+  	/*font color of link stays black when hovered */
+  	a:link{
+  		text-decoration: none;
+  		color: black;
+  	}
+
+  	/*font color of link stays black even after it is clicked*/
+  	a.visited{
+  		text-decoration: none;
+  		color: black;
+  	}
+
+    .jumbotron{
+      background-color: transparent;
+      color: white;
+    }
+
+    /*Make input form narrower*/
+    .container.custom-container {
+      margin-top: 30px;
+      padding: 0 280px;
+      padding-bottom: 30px;
+    }
+
+    #header{
+      background-image: url('someguy.jpg');
+      background-size: cover;
+      background-position: center center;
+      /*min-height: 500px;*/
+    }
+
+    /*set spacing in the "panel", "flip" dropdown*/
+    .panel, .flip {
+      padding: 5px;
+     }
+
+     .flip .a{
+      color: white !important;
+     }
+
+     /*hide "flip" dropdown initially*/
+     .panel {
+       padding: 20px;
+       background-color: transparent;
+     }
+
+     html, body{
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    /* Resize input forms when viewed on a mobile */
+    @media (max-width: 978px) {
+      .container.custom-container{
+
+        padding: 25px;
+      }
+      #header{
+        /*height: auto;*/
+      }
+      .info{
+        padding: 25px;
+      }
+      .panel{
+        display: none;
+        background: black;
+        opacity: 0.8;
+      }
+    }
+
+    @media (max-width: 768px) {
+      /*Remove bottom border on the left side of the navbar*/
+      .navbar-default .navbar-brand{
+        border-bottom: 0px;
+      }
+      /*set navbar opacity on smaller screens*/
+      .navbar{
+        background: black;
+        opacity: 0.8;
+      }
+
+      /*-- change navbar dropdown color --*/
+      /*.navbar-default .navbar-nav .open .dropdown-menu>li>a,.navbar-default .navbar-nav .open .dropdown-menu
+      {
+        background-color:transparent;
+        opacity: 1;
+      }*/
+      .jumbotron p{
+        font-size: 15px;
+        font-weight: bold;
+      }
+    }
+
+  </style>
+
+
+</head>
+<body>
+
+<div class="clearfix container-fluid" id="header">
+
+  
+  <!--navbar-->
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+      <!--Compress navbar links into one button when viewed on a phone-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class = "navbar-brand" href="index.html"><span class="glyphicon glyphicon-stats logo"></span> Smarter Portfolio</a>
+      </div>
+
+      <!--Nav bar links. Will be put in a button when viewed on a phone-->
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">HOME</a></li>
+          <!--drop drop of features link-->
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">FEATURES<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="PortfolioBuilder.html">PORTFOLIO BUILDER</a></li>
+              <li><a href="ExpectedGrowthCalculator.html">EXPECTED GROWTH CALCULATOR</a></li>
+              <li><a href="CreditCardWizard.html">CREDIT CARD WIZARD</a></li>
+            </ul>
+          </li>
+          <li><a href="AboutUs.html">ABOUT US</a></li>
+          <li><a href="FAQ.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--title-->
+  <div class="jumbotron text-center">
+    <h1>Expected Growth Calculator</h1>
+    <div class="container info">
+      <div class="flip">
+        <a href="#"><h5 style="color:white; font-weight:bold;">About this Tool</h5></a>
+      </div>
+      <div class="panel">
+        <p>This Expected Growth Calculator is here to help you understand the potential of your investments. Based on long-term performance trends of the market, it estimates the growth of your investments over time. It is not accurate for short periods of time, and not even entirely accurate for longer periods of time.</p>
+      </div>
+    </div>
+  </div>
+    
+</div>
+
+<!--input form-->
+<div class = "custom-container container">
+
+  <div style="border-bottom: solid 1px #D3D3D3"><h3>The Calculator</h3></div><br><br>
+
+  <form id="rendered-form">
+
+   <div class="form-group field-number-1">
+     <label for="number-1">What is the initial value of your investments? <span class="required">*</span> 
+     </label> 
+     <input type="number" required="" class="form-control" name="number-1" id="number-1" aria-required="true">
+   </div>
+
+   <div class="form-group field-number-2">
+     <label for="number-2">What is the expected annual percentage return on your investments? <span class="required">*</span> </label> 
+     <input type="number" required="" class="form-control" name="number-2" id="number-2" aria-required="true">
+    </div>
+
+   <div class="form-group field-number-3">
+     <label for="number-3">How many elapsed years do you want to calculate for? <span class="required">*</span> </label> 
+     <input type="number" required="" class="form-control" name="number-3" id="number-3" aria-required="true">
+    </div>
+
+    <div class="form-group field-number-4">
+     <label for="number-4">How many times that interest is compounded annually? <span class="required">*</span> </label> 
+     <input type="number" required="" class="form-control" name="number-4" id="number-4" aria-required="true">
+    </div>
+    
+     <div class="form-group field-number-5">
+     <label for="number-5">How much additional monthly payment? <span class="required">*</span> </label> 
+     <input type="number" required="" class="form-control" name="number-5" id="number-5" aria-required="true">
+    </div><br>
+
+    <!-- run getInput, printResult, and initiate Modal to show results at button click-->
+        <!-- run getInput, printResult, and initiate Modal to show results at button click-->
+    <div class="form-group field-button-submit">
+        <button type="button" class="button-input btn btn-success" name="button-submit" style="success" id="button-submit" onclick="getInput(); expectedgrowth();printResult();" data-toggle="modal" data-target="#modalResult">Submit</button>
+    </div> 
+
+  </form>
+</div>
+<!-- Modal Result -->
+  <div class="modal fade" id="modalResult" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" id="button-done"  data-dismiss="modal">&times;</button>
+
+          <h4 class="modal-title">RESULT</h4>
+        </div>
+        <div class="modal-body">
+          <p>Your initial investment:</p>
+          <p id="sampleResultInvestmentValue"></p>
+		  <p>Rate of interest:</p>
+          <p id="sampleResultPercentage"></p>
+		  <p>Years planning to invest</p>
+          <p id="sampleResultYears"></p>
+          <p>Number of compounds:</p>
+          <p id="sampleResultCompound"></p>
+          <p>Additional Investment</p>
+          <p id="sampleResultAdditionalInvestment"></p>
+          <p>Expected amount after investment:</p>
+          <p id="sampleResultResult"></p>
+		  <div id="chartContainer" style="height: 400px; width: 80%;"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" id="button-done"  data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+
